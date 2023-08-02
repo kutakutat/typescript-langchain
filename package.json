@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint --fix --quiet src/**/*.ts",
+    "format": "prettier --loglevel silent --write src/**/*.ts"
   },
   "keywords": [],
   "author": "",
