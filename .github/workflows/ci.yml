@@ -1,0 +1,21 @@
+name: Caching with npm
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        id: setup_node_id
+        with:
+          node-version: 14
+          cache: npm
+      - name: Install dependencies from package-lock.json
+        run: npm ci
+      - name: Run build script
+        run: npm run build
+      - name: Run test script
+        run: npm run test
