@@ -13,8 +13,8 @@ jobs:
         with:
           node-version: 14
           cache: npm
-      - name: Install dependencies from package-lock.json
-        run: npm ci
+      - name: Install dependencies
+        run: npm install
       - name: Run build script
         run: npm run build
       - name: Run test script
